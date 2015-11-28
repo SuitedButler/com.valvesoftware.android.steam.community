@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@color/title_background" android:layout_width="fill_parent" android:layout_height="50.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:layout_gravity="center_vertical" android:id="@id/hamburgerButton" android:background="@drawable/ic_action_menu" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="8.0dip" android:text=" " />
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <com.valvesoftware.android.steam.community.views.RobotoRegularTextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="@color/primary_foreground" android:ellipsize="end" android:gravity="start|center" android:id="@id/titleLabel" android:paddingLeft="15.0sp" android:paddingRight="15.0sp" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="" android:singleLine="true" />
+        <Button android:layout_gravity="center|right" android:id="@id/titleNavSearchButton" android:background="@drawable/ic_action_search" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="5.0dip" android:text=" " />
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="center_vertical" android:layout_width="38.0dip" android:layout_height="30.0dip">
+        <Button android:layout_gravity="center_vertical" android:id="@id/titleNavRefreshButton" android:background="@drawable/ic_action_refresh" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="8.0dip" android:text=" " />
+        <ProgressBar android:gravity="center" android:layout_gravity="center" android:id="@id/titleProgressBar" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="12.0dip" android:maxWidth="24.0dip" android:maxHeight="24.0dip" android:indeterminate="true" android:minWidth="24.0dip" android:minHeight="24.0dip" />
+    </FrameLayout>
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageButton android:layout_gravity="center" android:id="@id/titleExtraButton" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="12.0dip" />
+    </RelativeLayout>
+</LinearLayout>

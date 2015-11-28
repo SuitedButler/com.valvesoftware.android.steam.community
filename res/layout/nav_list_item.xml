@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/nav_list_item_selector" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:paddingLeft="12.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/navigation_drawer_item_height">
+        <com.valvesoftware.android.steam.community.views.RobotoRegularTextView android:textSize="18.0sp" android:textColor="@color/primary_foreground" android:gravity="center_vertical" android:id="@id/nav_item_name" android:paddingLeft="12.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="ioupiou" android:singleLine="true" />
+    </RelativeLayout>
+</LinearLayout>

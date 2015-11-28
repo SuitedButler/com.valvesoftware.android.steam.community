@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/nav_header_view" android:layout_width="fill_parent" android:layout_height="68.0dip">
+        <FrameLayout android:layout_gravity="center_vertical" android:id="@id/avatar_container" android:layout_width="61.0dip" android:layout_height="fill_parent">
+            <ImageView android:layout_gravity="center" android:id="@id/avatar" android:layout_width="60.0dip" android:layout_height="60.0dip" android:src="@drawable/placeholder_contact" />
+        </FrameLayout>
+        <com.valvesoftware.android.steam.community.views.RobotoRegularTextView android:textSize="18.0sp" android:gravity="center_vertical" android:layout_gravity="center" android:id="@id/name" android:paddingTop="4.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip" android:text="" android:layout_toRightOf="@id/avatar_container" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout android:background="@drawable/bottom_border" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+</LinearLayout>

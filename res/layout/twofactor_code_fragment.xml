@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:background="@drawable/bg_twofactorcode" android:layout_width="fill_parent" android:layout_height="130.0dip">
+        <ImageView android:layout_gravity="center" android:id="@id/twofactor_back" android:padding="2.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/twofactor_back" android:layout_weight="1.0" android:contentDescription="@null" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="8.0">
+            <TextView android:textSize="50.0sp" android:textColor="@color/twofactorcode_normal" android:layout_gravity="center_horizontal" android:id="@id/twofactorcode_code" android:paddingTop="0.0dip" android:paddingBottom="1.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="false" />
+            <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.valvesoftware.android.steam.community.TwoFactorCodeThermometerView android:layout_gravity="center_horizontal" android:id="@id/twofactorcode_thermometer" android:layout_width="fill_parent" android:layout_height="20.0dip" />
+            </RelativeLayout>
+            <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="8.0">
+                <TextView android:textSize="10.0sp" android:textColor="@color/twofactorcode_valvetime" android:id="@id/twofactorcode_valvetime" android:paddingTop="0.0dip" android:paddingBottom="2.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/valvetime" android:singleLine="false" android:layout_alignParentLeft="true" />
+                <TextView android:textSize="16.0sp" android:textColor="@color/twofactorcode_account_name" android:gravity="center" android:id="@id/twofactorcode_account_name" android:paddingTop="0.0dip" android:paddingBottom="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="false" android:layout_centerInParent="true" />
+            </RelativeLayout>
+        </LinearLayout>
+        <ImageView android:layout_gravity="center" android:id="@id/twofactor_forward" android:padding="2.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/twofactor_forward" android:layout_weight="1.0" android:layout_alignParentRight="true" android:contentDescription="@null" />
+    </LinearLayout>
+</merge>

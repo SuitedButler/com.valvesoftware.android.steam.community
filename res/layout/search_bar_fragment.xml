@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="horizontal" android:id="@id/list_search_bar" android:background="@color/primary_background" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textSize="20.0sp" android:textColor="@color/primary_foreground" android:layout_gravity="center_vertical" android:id="@id/search_bar_text" android:background="@color/primary_background" android:paddingLeft="5.0sp" android:paddingTop="0.0sp" android:paddingBottom="0.0sp" android:layout_width="fill_parent" android:layout_height="22.0sp" android:hint="@string/Search" android:singleLine="true" android:maxLength="255" android:layout_weight="1.0" android:inputType="textAutoCorrect|textShortMessage" android:imeOptions="actionSearch|flagNoEnterAction" />
+    <Button android:layout_gravity="center|right" android:id="@id/search_bar_close_button" android:background="@drawable/ic_action_clear" android:layout_width="30.0sp" android:layout_height="30.0sp" android:layout_marginRight="8.0sp" android:text="" />
+</FrameLayout>
