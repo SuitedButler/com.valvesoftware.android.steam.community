@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 441
+    .line 468
     iput-object p1, p0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient$1;->this$1:Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient;
 
     invoke-direct {p0}, Lcom/valvesoftware/android/steam/community/SteamguardState$Completion;-><init>()V
@@ -39,19 +39,19 @@
     .param p2, "optDescription"    # Ljava/lang/String;
 
     .prologue
-    .line 448
+    .line 475
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient$1;->this$1:Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient;
 
     iget-object v0, v0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient;->this$0:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
     # getter for: Lcom/valvesoftware/android/steam/community/views/SteamWebView;->m_steamguardJavascriptHandler:Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;
-    invoke-static {v0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->access$1000(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;
+    invoke-static {v0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->access$1200(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;
 
     move-result-object v0
 
     invoke-virtual {v0, p2, p1}, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;->setJavascriptResultError(Ljava/lang/String;I)V
 
-    .line 449
+    .line 476
     return-void
 .end method
 
@@ -59,13 +59,13 @@
     .locals 2
 
     .prologue
-    .line 444
+    .line 471
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient$1;->this$1:Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient;
 
     iget-object v0, v0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient;->this$0:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
     # getter for: Lcom/valvesoftware/android/steam/community/views/SteamWebView;->m_steamguardJavascriptHandler:Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;
-    invoke-static {v0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->access$1000(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;
+    invoke-static {v0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->access$1200(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;
 
     move-result-object v0
 
@@ -73,6 +73,6 @@
 
     invoke-virtual {v0, v1}, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;->setJavascriptResultOkay(Ljava/lang/String;)V
 
-    .line 445
+    .line 472
     return-void
 .end method

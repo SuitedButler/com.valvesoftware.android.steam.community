@@ -2,8 +2,13 @@
 .super Landroid/support/v4/app/Fragment;
 .source "SteamguardFragmentWeb.java"
 
+# interfaces
+.implements Lcom/valvesoftware/android/steam/community/fragment/IBackButtonSupport;
+
 
 # instance fields
+.field private m_webView:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
+
 .field private receiver:Landroid/content/BroadcastReceiver;
 
 .field private twoFactorCodeListView:Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;
@@ -16,7 +21,7 @@
     .locals 0
 
     .prologue
-    .line 21
+    .line 22
     invoke-direct {p0}, Landroid/support/v4/app/Fragment;-><init>()V
 
     return-void
@@ -27,7 +32,7 @@
     .param p0, "x0"    # Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;
 
     .prologue
-    .line 21
+    .line 22
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->twoFactorCodeListView:Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;
 
     return-object v0
@@ -37,7 +42,7 @@
     .locals 2
 
     .prologue
-    .line 92
+    .line 104
     :try_start_0
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -53,7 +58,7 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 96
+    .line 108
     :goto_0
     return-void
 
@@ -65,58 +70,85 @@
 
 
 # virtual methods
+.method public canGoBack()Z
+    .locals 1
+
+    .prologue
+    .line 84
+    iget-object v0, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->m_webView:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
+
+    invoke-virtual {v0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->canGoBack()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public goBack()V
+    .locals 1
+
+    .prologue
+    .line 89
+    iget-object v0, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->m_webView:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
+
+    invoke-virtual {v0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->goBack()V
+
+    .line 90
+    return-void
+.end method
+
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
-    .locals 7
+    .locals 6
     .param p1, "inflater"    # Landroid/view/LayoutInflater;
     .param p2, "container"    # Landroid/view/ViewGroup;
     .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 32
+    .line 34
     invoke-super {p0, p1, p2, p3}, Landroid/support/v4/app/Fragment;->onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
 
-    .line 33
-    const v5, 0x7f03002c
+    .line 35
+    const v4, 0x7f03002c
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual {p1, v5, p2, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {p1, v4, p2, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v2
 
-    .line 34
+    .line 36
     .local v2, "view":Landroid/view/View;
-    const v5, 0x7f0d008a
+    const v4, 0x7f0d008a
 
-    invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v2, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v5
+    move-result-object v4
 
-    check-cast v5, Landroid/widget/FrameLayout;
+    check-cast v4, Landroid/widget/FrameLayout;
 
-    iput-object v5, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->twoFactorContainer:Landroid/widget/FrameLayout;
-
-    .line 35
-    const v5, 0x7f0d0091
-
-    invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;
-
-    iput-object v5, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->twoFactorCodeListView:Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;
+    iput-object v4, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->twoFactorContainer:Landroid/widget/FrameLayout;
 
     .line 37
-    const v5, 0x7f0d0092
+    const v4, 0x7f0d0091
 
-    invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v2, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;
+
+    iput-object v4, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->twoFactorCodeListView:Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;
+
+    .line 39
+    const v4, 0x7f0d0092
+
+    invoke-virtual {v2, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
     check-cast v3, Landroid/widget/LinearLayout;
 
-    .line 38
+    .line 40
     .local v3, "webViewContainer":Landroid/widget/LinearLayout;
     new-instance v4, Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
@@ -126,46 +158,55 @@
 
     invoke-direct {v4, v5}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;-><init>(Landroid/content/Context;)V
 
-    .line 39
-    .local v4, "wv":Lcom/valvesoftware/android/steam/community/views/SteamWebView;
+    iput-object v4, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->m_webView:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
+
+    .line 41
+    iget-object v4, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->m_webView:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
+
     invoke-virtual {v4, p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->setOwner(Ljava/lang/Object;)V
 
-    .line 40
+    .line 42
+    iget-object v4, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->m_webView:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
+
     invoke-virtual {v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 42
+    .line 44
     const/4 v1, 0x0
 
-    .line 43
+    .line 45
     .local v1, "strDefaultUrl":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
 
-    .line 44
+    .line 46
     .local v0, "args":Landroid/os/Bundle;
     if-eqz v0, :cond_0
 
-    .line 45
-    const-string v5, "defaultUrl"
+    .line 47
+    const-string v4, "defaultUrl"
 
-    invoke-virtual {v0, v5}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v4}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 48
+    .line 50
     :cond_0
     if-eqz v1, :cond_1
 
-    .line 49
+    .line 51
+    iget-object v4, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->m_webView:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
+
     invoke-virtual {v4, v1}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 54
+    .line 56
     :goto_0
     return-object v2
 
-    .line 51
+    .line 53
     :cond_1
+    iget-object v4, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->m_webView:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
+
     sget-object v5, Lcom/valvesoftware/android/steam/community/SteamAppUri;->STEAMGUARD_PRECHANGE:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->loadUrl(Ljava/lang/String;)V
@@ -177,18 +218,18 @@
     .locals 1
 
     .prologue
-    .line 75
+    .line 77
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onPause()V
 
-    .line 76
+    .line 78
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->twoFactorCodeListView:Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;
 
     invoke-virtual {v0}, Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;->stop()V
 
-    .line 77
+    .line 79
     invoke-direct {p0}, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->unregister()V
 
-    .line 78
+    .line 80
     return-void
 .end method
 
@@ -196,31 +237,31 @@
     .locals 2
 
     .prologue
-    .line 59
+    .line 61
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onResume()V
 
-    .line 60
+    .line 62
     new-instance v0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb$1;
 
     invoke-direct {v0, p0}, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb$1;-><init>(Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;)V
 
     iput-object v0, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->receiver:Landroid/content/BroadcastReceiver;
 
-    .line 66
+    .line 68
     invoke-static {}, Lcom/valvesoftware/android/steam/community/TimeCorrector;->getInstance()Lcom/valvesoftware/android/steam/community/TimeCorrector;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/valvesoftware/android/steam/community/TimeCorrector;->hintSync()V
 
-    .line 67
+    .line 69
     invoke-static {p0}, Lcom/valvesoftware/android/steam/community/activity/ActivityHelper;->fragmentIsActive(Landroid/support/v4/app/Fragment;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 68
+    .line 70
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -229,13 +270,13 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->setTitle(I)V
 
-    .line 70
+    .line 72
     :cond_0
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->twoFactorCodeListView:Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;
 
     invoke-virtual {v0}, Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;->syncFragments()V
 
-    .line 71
+    .line 73
     return-void
 .end method
 
@@ -246,7 +287,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 81
+    .line 93
     iget-object v2, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->twoFactorContainer:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_2
@@ -256,7 +297,7 @@
     :goto_0
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 82
+    .line 94
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->twoFactorCodeListView:Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;
 
     if-nez p1, :cond_0
@@ -266,26 +307,26 @@
     :cond_0
     invoke-virtual {v0, v1}, Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;->setInvisibleIfNoCodes(Z)V
 
-    .line 83
+    .line 95
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/fragment/SteamguardFragmentWeb;->twoFactorCodeListView:Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;
 
     invoke-virtual {v0}, Lcom/valvesoftware/android/steam/community/fragment/TwoFactorCodeListView;->syncFragments()V
 
-    .line 85
+    .line 97
     if-eqz p1, :cond_1
 
-    .line 86
+    .line 98
     invoke-static {}, Lcom/valvesoftware/android/steam/community/TimeCorrector;->getInstance()Lcom/valvesoftware/android/steam/community/TimeCorrector;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/valvesoftware/android/steam/community/TimeCorrector;->hintSync()V
 
-    .line 88
+    .line 100
     :cond_1
     return-void
 
-    .line 81
+    .line 93
     :cond_2
     const/16 v0, 0x8
 

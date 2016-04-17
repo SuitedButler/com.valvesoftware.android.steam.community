@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 173
+    .line 200
     iput-object p1, p0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$1;->this$0:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +42,14 @@
     .param p2, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 176
+    .line 203
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     packed-switch v0, :pswitch_data_0
 
-    .line 190
+    .line 217
     .end local p1    # "v":Landroid/view/View;
     :cond_0
     :goto_0
@@ -57,7 +57,7 @@
 
     return v0
 
-    .line 180
+    .line 207
     .restart local p1    # "v":Landroid/view/View;
     :pswitch_0
     invoke-virtual {p1}, Landroid/view/View;->hasFocus()Z
@@ -66,12 +66,12 @@
 
     if-nez v0, :cond_0
 
-    .line 182
+    .line 209
     instance-of v0, p1, Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
     if-eqz v0, :cond_1
 
-    .line 183
+    .line 210
     check-cast p1, Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
     .end local p1    # "v":Landroid/view/View;
@@ -80,14 +80,14 @@
 
     goto :goto_0
 
-    .line 185
+    .line 212
     .restart local p1    # "v":Landroid/view/View;
     :cond_1
     invoke-virtual {p1}, Landroid/view/View;->requestFocus()Z
 
     goto :goto_0
 
-    .line 176
+    .line 203
     nop
 
     :pswitch_data_0

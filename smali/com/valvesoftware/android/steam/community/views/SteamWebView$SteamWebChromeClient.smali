@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 761
+    .line 788
     iput-object p1, p0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebChromeClient;->this$0:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
     invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
@@ -37,7 +37,7 @@
     .param p2, "x1"    # Lcom/valvesoftware/android/steam/community/views/SteamWebView$1;
 
     .prologue
-    .line 761
+    .line 788
     invoke-direct {p0, p1}, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebChromeClient;-><init>(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)V
 
     return-void
@@ -53,7 +53,7 @@
     .param p4, "result"    # Landroid/webkit/JsResult;
 
     .prologue
-    .line 783
+    .line 810
     invoke-super {p0, p1, p2, p3, p4}, Landroid/webkit/WebChromeClient;->onJsAlert(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z
 
     move-result v0
@@ -67,10 +67,10 @@
     .param p2, "newProgress"    # I
 
     .prologue
-    .line 764
+    .line 791
     invoke-super {p0, p1, p2}, Landroid/webkit/WebChromeClient;->onProgressChanged(Landroid/webkit/WebView;I)V
 
-    .line 766
+    .line 793
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -87,29 +87,29 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 769
+    .line 796
     const/16 v0, 0x46
 
     if-le p2, v0, :cond_0
 
-    .line 770
+    .line 797
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebChromeClient;->this$0:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
     # invokes: Lcom/valvesoftware/android/steam/community/views/SteamWebView;->requestFocusWrapper()V
     invoke-static {v0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->access$200(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)V
 
-    .line 773
+    .line 800
     :cond_0
     const/16 v0, 0x63
 
     if-le p2, v0, :cond_1
 
-    .line 774
+    .line 801
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebChromeClient;->this$0:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
     invoke-virtual {v0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->hideProgressIndicator()V
 
-    .line 776
+    .line 803
     :cond_1
     return-void
 .end method

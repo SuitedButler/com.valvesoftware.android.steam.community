@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 109
+    .line 110
     iput-object p1, p0, Lcom/valvesoftware/android/steam/community/activity/MainActivity$1;->this$0:Lcom/valvesoftware/android/steam/community/activity/MainActivity;
 
     iput-object p2, p0, Lcom/valvesoftware/android/steam/community/activity/MainActivity$1;->val$intentAfterLoginCompletes:Landroid/content/Intent;
@@ -44,34 +44,34 @@
     .locals 3
 
     .prologue
-    .line 112
+    .line 113
     new-instance v0, Lcom/valvesoftware/android/steam/community/GcmRegistrar;
 
     invoke-direct {v0}, Lcom/valvesoftware/android/steam/community/GcmRegistrar;-><init>()V
 
-    .line 113
+    .line 114
     .local v0, "gcmRegistrar":Lcom/valvesoftware/android/steam/community/GcmRegistrar;
     invoke-virtual {v0}, Lcom/valvesoftware/android/steam/community/GcmRegistrar;->registerWithGcm()V
 
-    .line 116
+    .line 117
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/MainActivity$1;->this$0:Lcom/valvesoftware/android/steam/community/activity/MainActivity;
 
     iget-object v1, v1, Lcom/valvesoftware/android/steam/community/activity/MainActivity;->userNotificationCounts:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;
 
     invoke-virtual {v1}, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;->Clear()V
 
-    .line 118
+    .line 119
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/MainActivity$1;->this$0:Lcom/valvesoftware/android/steam/community/activity/MainActivity;
 
     # invokes: Lcom/valvesoftware/android/steam/community/activity/MainActivity;->refreshUserNotificationCounts()V
     invoke-static {v1}, Lcom/valvesoftware/android/steam/community/activity/MainActivity;->access$000(Lcom/valvesoftware/android/steam/community/activity/MainActivity;)V
 
-    .line 120
+    .line 121
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/MainActivity$1;->this$0:Lcom/valvesoftware/android/steam/community/activity/MainActivity;
 
     invoke-virtual {v1}, Lcom/valvesoftware/android/steam/community/activity/MainActivity;->refreshNavDrawer()V
 
-    .line 121
+    .line 122
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/MainActivity$1;->this$0:Lcom/valvesoftware/android/steam/community/activity/MainActivity;
 
     invoke-virtual {v1}, Lcom/valvesoftware/android/steam/community/activity/MainActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
@@ -80,34 +80,34 @@
 
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentManager;->popBackStack()V
 
-    .line 122
+    .line 123
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/MainActivity$1;->this$0:Lcom/valvesoftware/android/steam/community/activity/MainActivity;
 
     invoke-virtual {v1}, Lcom/valvesoftware/android/steam/community/activity/MainActivity;->showMenuAndActionBar()V
 
-    .line 123
+    .line 124
     invoke-static {}, Lcom/valvesoftware/android/steam/community/UmqCommunicator;->getInstance()Lcom/valvesoftware/android/steam/community/UmqCommunicator;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lcom/valvesoftware/android/steam/community/UmqCommunicator;->start()V
 
-    .line 124
+    .line 125
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/MainActivity$1;->val$intentAfterLoginCompletes:Landroid/content/Intent;
 
     if-nez v1, :cond_0
 
-    .line 125
+    .line 126
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/MainActivity$1;->this$0:Lcom/valvesoftware/android/steam/community/activity/MainActivity;
 
     # invokes: Lcom/valvesoftware/android/steam/community/activity/MainActivity;->loadUserDefaultFragment()V
     invoke-static {v1}, Lcom/valvesoftware/android/steam/community/activity/MainActivity;->access$100(Lcom/valvesoftware/android/steam/community/activity/MainActivity;)V
 
-    .line 129
+    .line 130
     :goto_0
     return-void
 
-    .line 127
+    .line 128
     :cond_0
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/MainActivity$1;->this$0:Lcom/valvesoftware/android/steam/community/activity/MainActivity;
 

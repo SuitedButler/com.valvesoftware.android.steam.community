@@ -73,7 +73,33 @@
     return-void
 .end method
 
-.method static synthetic access$1000(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;
+.method static synthetic access$1000(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)Z
+    .locals 1
+    .param p0, "x0"    # Lcom/valvesoftware/android/steam/community/views/SteamWebView;
+
+    .prologue
+    .line 51
+    invoke-direct {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->isManagePhonePage()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$1100(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)Z
+    .locals 1
+    .param p0, "x0"    # Lcom/valvesoftware/android/steam/community/views/SteamWebView;
+
+    .prologue
+    .line 51
+    invoke-direct {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->isManageTwofactorPage()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$1200(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;
     .locals 1
     .param p0, "x0"    # Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
@@ -84,7 +110,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$1100(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)Z
+.method static synthetic access$1300(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)Z
     .locals 1
     .param p0, "x0"    # Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
@@ -97,7 +123,7 @@
     return v0
 .end method
 
-.method static synthetic access$1200(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)Z
+.method static synthetic access$1400(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)Z
     .locals 1
     .param p0, "x0"    # Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
@@ -245,16 +271,16 @@
     .param p0, "uri"    # Landroid/net/Uri;
 
     .prologue
-    .line 826
+    .line 853
     invoke-virtual {p0}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 827
+    .line 854
     .local v1, "uriString":Ljava/lang/String;
     const-string v0, "openurl?url="
 
-    .line 828
+    .line 855
     .local v0, "keyPattern":Ljava/lang/String;
     invoke-virtual {v1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
@@ -264,7 +290,7 @@
 
     if-eq v3, v4, :cond_0
 
-    .line 829
+    .line 856
     invoke-virtual {v1, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v3
@@ -279,7 +305,7 @@
 
     move-result-object v2
 
-    .line 833
+    .line 860
     :goto_0
     return-object v2
 
@@ -309,16 +335,16 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 98
+    .line 119
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getUrl()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 99
+    .line 120
     .local v0, "url":Ljava/lang/String;
     if-nez v0, :cond_1
 
-    .line 104
+    .line 125
     :cond_0
     :goto_0
     return v1
@@ -398,6 +424,132 @@
     goto :goto_0
 .end method
 
+.method private isManagePhonePage()Z
+    .locals 3
+
+    .prologue
+    .line 108
+    invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getUrl()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 109
+    .local v0, "url":Ljava/lang/String;
+    if-nez v0, :cond_0
+
+    .line 111
+    const/4 v1, 0x0
+
+    .line 115
+    :goto_0
+    return v1
+
+    .line 114
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "startsWith "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/valvesoftware/android/steam/community/Config;->URL_STORE_BASE:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "/phone/"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 115
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v2, Lcom/valvesoftware/android/steam/community/Config;->URL_STORE_BASE:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "/phone/"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    goto :goto_0
+.end method
+
+.method private isManageTwofactorPage()Z
+    .locals 3
+
+    .prologue
+    .line 98
+    invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getUrl()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 99
+    .local v0, "url":Ljava/lang/String;
+    if-nez v0, :cond_0
+
+    .line 101
+    const/4 v1, 0x0
+
+    .line 104
+    :goto_0
+    return v1
+
+    :cond_0
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v2, Lcom/valvesoftware/android/steam/community/Config;->URL_STORE_BASE:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "/twofactor/"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    goto :goto_0
+.end method
+
 .method private isSteamguardPage()Z
     .locals 3
 
@@ -451,7 +603,7 @@
     .param p0, "url"    # Ljava/lang/String;
 
     .prologue
-    .line 108
+    .line 129
     sget-object v0, Lcom/valvesoftware/android/steam/community/Config;->URL_STORE_BASE:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -501,7 +653,7 @@
     .locals 1
 
     .prologue
-    .line 206
+    .line 233
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->owner:Ljava/lang/Object;
 
     if-eqz v0, :cond_0
@@ -514,11 +666,11 @@
 
     if-nez v0, :cond_0
 
-    .line 210
+    .line 237
     :goto_0
     return-void
 
-    .line 209
+    .line 236
     :cond_0
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->requestFocus()Z
 
@@ -531,7 +683,7 @@
     .locals 1
 
     .prologue
-    .line 124
+    .line 145
     invoke-super {p0}, Landroid/webkit/WebView;->getUrl()Ljava/lang/String;
 
     move-result-object v0
@@ -543,7 +695,7 @@
     .locals 1
 
     .prologue
-    .line 843
+    .line 870
     invoke-direct {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -552,7 +704,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 844
+    .line 871
     invoke-direct {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -561,7 +713,7 @@
 
     invoke-virtual {v0}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->hideProgressIndicator()V
 
-    .line 846
+    .line 873
     :cond_0
     return-void
 .end method
@@ -570,19 +722,19 @@
     .locals 3
 
     .prologue
-    .line 113
+    .line 134
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getUrl()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 114
+    .line 135
     .local v0, "url":Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 116
+    .line 137
     const/4 v1, 0x0
 
-    .line 119
+    .line 140
     :goto_0
     return v1
 
@@ -619,15 +771,15 @@
     .param p1, "sUrl"    # Ljava/lang/String;
 
     .prologue
-    .line 788
+    .line 815
     if-nez p1, :cond_1
 
-    .line 807
+    .line 834
     :cond_0
     :goto_0
     return-void
 
-    .line 790
+    .line 817
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -645,7 +797,7 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 792
+    .line 819
     const-string v0, "javascript:"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -654,12 +806,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 793
+    .line 820
     invoke-super {p0, p1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 797
+    .line 824
     :cond_2
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->owner:Ljava/lang/Object;
 
@@ -673,17 +825,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 801
+    .line 828
     :cond_3
     invoke-direct {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->requestFocusWrapper()V
 
-    .line 803
+    .line 830
     invoke-super {p0, p1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 804
+    .line 831
     if-eqz p1, :cond_0
 
-    .line 805
+    .line 832
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->showProgressIndicator()V
 
     goto :goto_0
@@ -693,13 +845,13 @@
     .locals 0
 
     .prologue
-    .line 201
+    .line 228
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->showProgressIndicator()V
 
-    .line 202
+    .line 229
     invoke-super {p0}, Landroid/webkit/WebView;->reload()V
 
-    .line 203
+    .line 230
     return-void
 .end method
 
@@ -709,21 +861,21 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 132
+    .line 153
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x10
 
     if-ge v0, v1, :cond_0
 
-    .line 133
+    .line 154
     invoke-virtual {p0, v2}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->setBackgroundColor(I)V
 
-    .line 137
+    .line 158
     :goto_0
     return-void
 
-    .line 135
+    .line 156
     :cond_0
     const/4 v0, 0x1
 
@@ -753,7 +905,7 @@
     .param p1, "title"    # Ljava/lang/String;
 
     .prologue
-    .line 129
+    .line 150
     return-void
 .end method
 
@@ -763,12 +915,12 @@
     .param p2, "description"    # Ljava/lang/String;
 
     .prologue
-    .line 810
+    .line 837
     invoke-static {p2}, Lcom/valvesoftware/android/steam/community/NetErrorTranslator;->translateError(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 812
+    .line 839
     .local v0, "friendlyError":Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -890,7 +1042,7 @@
 
     invoke-virtual {p0, v1, v2, v3}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->loadData(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 823
+    .line 850
     return-void
 .end method
 
@@ -904,35 +1056,35 @@
 
     const/4 v2, 0x1
 
-    .line 146
+    .line 167
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->setBlackBackground()V
 
-    .line 148
+    .line 169
     new-instance v0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient;
 
     invoke-direct {v0, p0, v1}, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient;-><init>(Lcom/valvesoftware/android/steam/community/views/SteamWebView;Lcom/valvesoftware/android/steam/community/views/SteamWebView$1;)V
 
     invoke-virtual {p0, v0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
 
-    .line 149
+    .line 170
     new-instance v0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebChromeClient;
 
     invoke-direct {v0, p0, v1}, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebChromeClient;-><init>(Lcom/valvesoftware/android/steam/community/views/SteamWebView;Lcom/valvesoftware/android/steam/community/views/SteamWebView$1;)V
 
     invoke-virtual {p0, v0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V
 
-    .line 151
+    .line 172
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->isInEditMode()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 198
+    .line 225
     :goto_0
     return-void
 
-    .line 156
+    .line 177
     :cond_0
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getSettings()Landroid/webkit/WebSettings;
 
@@ -940,42 +1092,42 @@
 
     invoke-virtual {v0, v2}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
-    .line 157
+    .line 178
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V
 
-    .line 159
+    .line 180
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Landroid/webkit/WebSettings;->setSupportZoom(Z)V
 
-    .line 160
+    .line 181
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V
 
-    .line 161
+    .line 182
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0xb
 
     if-lt v0, v1, :cond_1
 
-    .line 162
+    .line 183
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v0
 
     invoke-virtual {v0, v3}, Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V
 
-    .line 165
+    .line 186
     :cond_1
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -983,7 +1135,7 @@
 
     if-lt v0, v1, :cond_2
 
-    .line 166
+    .line 187
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v0
@@ -992,41 +1144,59 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setMixedContentMode(I)V
 
-    .line 169
+    .line 190
     :cond_2
+    sget-object v0, Lcom/valvesoftware/android/steam/community/Config;->STEAM_UNIVERSE_WEBPHP:Lcom/valvesoftware/android/steam/community/Config$SteamUniverse;
+
+    sget-object v1, Lcom/valvesoftware/android/steam/community/Config$SteamUniverse;->Public:Lcom/valvesoftware/android/steam/community/Config$SteamUniverse;
+
+    if-eq v0, v1, :cond_3
+
+    .line 191
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x13
+
+    if-lt v0, v1, :cond_3
+
+    .line 192
+    invoke-static {v2}, Landroid/webkit/WebView;->setWebContentsDebuggingEnabled(Z)V
+
+    .line 196
+    :cond_3
     invoke-virtual {p0, v3}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->setScrollBarStyle(I)V
 
-    .line 170
+    .line 197
     invoke-virtual {p0, v3}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->setHorizontalScrollBarEnabled(Z)V
 
-    .line 171
+    .line 198
     invoke-virtual {p0, v2}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->setFocusable(Z)V
 
-    .line 172
+    .line 199
     invoke-virtual {p0, v2}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->setFocusableInTouchMode(Z)V
 
-    .line 173
+    .line 200
     new-instance v0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$1;
 
     invoke-direct {v0, p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView$1;-><init>(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)V
 
     invoke-virtual {p0, v0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 194
+    .line 221
     new-instance v0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;
 
     invoke-direct {v0, p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;-><init>(Lcom/valvesoftware/android/steam/community/views/SteamWebView;)V
 
     iput-object v0, p0, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->m_steamguardJavascriptHandler:Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;
 
-    .line 195
+    .line 222
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->m_steamguardJavascriptHandler:Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamguardJavascriptHandler;
 
     const-string v1, "SGHandler"
 
     invoke-virtual {p0, v0, v1}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 197
+    .line 224
     invoke-direct {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->requestFocusWrapper()V
 
     goto :goto_0
@@ -1036,7 +1206,7 @@
     .locals 1
 
     .prologue
-    .line 837
+    .line 864
     invoke-direct {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -1045,7 +1215,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 838
+    .line 865
     invoke-direct {p0}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -1054,7 +1224,7 @@
 
     invoke-virtual {v0}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->showProgressIndicator()V
 
-    .line 840
+    .line 867
     :cond_0
     return-void
 .end method

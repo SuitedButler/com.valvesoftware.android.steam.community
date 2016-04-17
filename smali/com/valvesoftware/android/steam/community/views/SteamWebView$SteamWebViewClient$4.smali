@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 723
+    .line 750
     iput-object p1, p0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient$4;->this$1:Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 726
+    .line 753
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient$4;->this$1:Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient;
 
     iget-object v0, v0, Lcom/valvesoftware/android/steam/community/views/SteamWebView$SteamWebViewClient;->this$0:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
@@ -49,6 +49,6 @@
 
     invoke-virtual {v0, v1}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->setBackgroundColor(I)V
 
-    .line 727
+    .line 754
     return-void
 .end method

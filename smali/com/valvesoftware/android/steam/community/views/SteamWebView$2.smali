@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 318
+    .line 345
     invoke-static {}, Lcom/valvesoftware/android/steam/community/SteamUriHandler$Command;->values()[Lcom/valvesoftware/android/steam/community/SteamUriHandler$Command;
 
     move-result-object v0

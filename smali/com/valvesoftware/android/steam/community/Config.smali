@@ -48,7 +48,7 @@
     const/4 v3, 0x0
 
     .line 13
-    const-string v0, "2.1.4"
+    const-string v0, "2.1.5"
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/Config;->APP_VERSION:Ljava/lang/String;
 
@@ -289,7 +289,7 @@
     goto/16 :goto_0
 
     :cond_1
-    const-string v0, "https://tonyp.valvesoftware.com:8283"
+    const-string v0, "https://afarnsworth.valvesoftware.com:8283"
 
     goto/16 :goto_0
 
@@ -306,7 +306,7 @@
     goto/16 :goto_1
 
     :cond_3
-    const-string v0, "http://tonyp.valvesoftware.com:8282"
+    const-string v0, "http://afarnsworth.valvesoftware.com:8282"
 
     goto/16 :goto_1
 
@@ -323,7 +323,7 @@
     goto/16 :goto_2
 
     :cond_5
-    const-string v0, "tonyp.valvesoftware.com/community"
+    const-string v0, "afarnsworth.valvesoftware.com/community"
 
     goto/16 :goto_2
 
@@ -340,7 +340,7 @@
     goto/16 :goto_3
 
     :cond_7
-    const-string v0, "tonyp.valvesoftware.com/community"
+    const-string v0, "afarnsworth.valvesoftware.com/community"
 
     goto/16 :goto_3
 
@@ -357,7 +357,7 @@
     goto/16 :goto_4
 
     :cond_9
-    const-string v0, "tonyp.valvesoftware.com/store"
+    const-string v0, "afarnsworth.valvesoftware.com/store"
 
     goto/16 :goto_4
 
@@ -374,7 +374,7 @@
     goto/16 :goto_5
 
     :cond_b
-    const-string v0, "tonyp.valvesoftware.com/store"
+    const-string v0, "afarnsworth.valvesoftware.com/store"
 
     goto/16 :goto_5
 
@@ -391,13 +391,13 @@
     goto/16 :goto_6
 
     :cond_d
-    const-string v0, "tonyp.valvesoftware.com/help"
+    const-string v0, "afarnsworth.valvesoftware.com/help"
 
     goto/16 :goto_6
 
     .line 62
     :cond_e
-    const-string v0, "http://tonyp.valvesoftware.com/crashupload/androidsubmit1"
+    const-string v0, "http://afarnsworth.valvesoftware.com/crashupload/androidsubmit1"
 
     goto :goto_7
 .end method

@@ -1,5 +1,5 @@
 version: 2.0.2
-apkFileName: com.valvesoftware.android.steam.community.apk
+apkFileName: com.valvesoftware.android.steam.community_v2.1.5.apk
 isFrameworkApk: false
 usesFramework:
   ids:
@@ -10,8 +10,8 @@ sdkInfo:
 packageInfo:
   forced-package-id: '127'
 versionInfo:
-  versionCode: '3125579'
-  versionName: 2.1.4
+  versionCode: '3390488'
+  versionName: 2.1.5
 sharedLibrary: false
 doNotCompress:
 - resources.arsc

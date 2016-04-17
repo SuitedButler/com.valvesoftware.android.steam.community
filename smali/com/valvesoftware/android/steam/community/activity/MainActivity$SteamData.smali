@@ -33,10 +33,10 @@
     .locals 1
 
     .prologue
-    .line 543
+    .line 544
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 544
+    .line 545
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -62,7 +62,7 @@
     .end annotation
 
     .prologue
-    .line 547
+    .line 548
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/MainActivity$SteamData;->steamIdToFriendsMap:Ljava/util/Map;
 
     return-object v0
@@ -82,17 +82,17 @@
     .end annotation
 
     .prologue
-    .line 551
+    .line 552
     .local p1, "mostRecentFriendsMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Lcom/valvesoftware/android/steam/community/model/Persona;>;"
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/MainActivity$SteamData;->steamIdToFriendsMap:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 552
+    .line 553
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/MainActivity$SteamData;->steamIdToFriendsMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 553
+    .line 554
     return-void
 .end method

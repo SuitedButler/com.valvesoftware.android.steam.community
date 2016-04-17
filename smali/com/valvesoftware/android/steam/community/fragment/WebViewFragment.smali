@@ -2,6 +2,9 @@
 .super Landroid/support/v4/app/Fragment;
 .source "WebViewFragment.java"
 
+# interfaces
+.implements Lcom/valvesoftware/android/steam/community/fragment/IBackButtonSupport;
+
 
 # instance fields
 .field private inMiddleOfProcessing:Z

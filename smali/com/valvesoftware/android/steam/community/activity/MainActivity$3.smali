@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 379
+    .line 380
     invoke-static {}, Lcom/valvesoftware/android/steam/community/SettingInfoDB$StartScreen;->values()[Lcom/valvesoftware/android/steam/community/SettingInfoDB$StartScreen;
 
     move-result-object v0
