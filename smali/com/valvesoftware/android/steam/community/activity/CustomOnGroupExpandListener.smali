@@ -19,7 +19,7 @@
     .locals 1
 
     .prologue
-    .line 838
+    .line 842
     const/4 v0, -0x1
 
     sput v0, Lcom/valvesoftware/android/steam/community/activity/CustomOnGroupExpandListener;->prevExpandedGroup:I
@@ -32,13 +32,13 @@
     .param p1, "expandableListView"    # Landroid/widget/ExpandableListView;
 
     .prologue
-    .line 834
+    .line 838
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 835
+    .line 839
     iput-object p1, p0, Lcom/valvesoftware/android/steam/community/activity/CustomOnGroupExpandListener;->expandableListView:Landroid/widget/ExpandableListView;
 
-    .line 836
+    .line 840
     return-void
 .end method
 
@@ -49,7 +49,7 @@
     .param p1, "group"    # I
 
     .prologue
-    .line 841
+    .line 845
     sget v0, Lcom/valvesoftware/android/steam/community/activity/CustomOnGroupExpandListener;->prevExpandedGroup:I
 
     const/4 v1, -0x1
@@ -60,22 +60,22 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 842
+    .line 846
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/CustomOnGroupExpandListener;->expandableListView:Landroid/widget/ExpandableListView;
 
     if-eqz v0, :cond_0
 
-    .line 843
+    .line 847
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/CustomOnGroupExpandListener;->expandableListView:Landroid/widget/ExpandableListView;
 
     sget v1, Lcom/valvesoftware/android/steam/community/activity/CustomOnGroupExpandListener;->prevExpandedGroup:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ExpandableListView;->collapseGroup(I)Z
 
-    .line 846
+    .line 850
     :cond_0
     sput p1, Lcom/valvesoftware/android/steam/community/activity/CustomOnGroupExpandListener;->prevExpandedGroup:I
 
-    .line 847
+    .line 851
     return-void
 .end method

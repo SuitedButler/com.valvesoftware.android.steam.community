@@ -40,7 +40,7 @@
     .locals 0
 
     .prologue
-    .line 772
+    .line 776
     iput-object p1, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity$18;->this$0:Lcom/valvesoftware/android/steam/community/activity/BaseActivity;
 
     iput-object p2, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity$18;->val$nameView:Landroid/widget/TextView;
@@ -59,12 +59,12 @@
     .param p1, "persona"    # Lcom/valvesoftware/android/steam/community/model/Persona;
 
     .prologue
-    .line 775
+    .line 779
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity$18;->this$0:Lcom/valvesoftware/android/steam/community/activity/BaseActivity;
 
     iput-object p1, v0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->loggedInUser:Lcom/valvesoftware/android/steam/community/model/Persona;
 
-    .line 776
+    .line 780
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity$18;->val$nameView:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity$18;->this$0:Lcom/valvesoftware/android/steam/community/activity/BaseActivity;
@@ -75,7 +75,7 @@
 
     invoke-static {v0, v1}, Lcom/valvesoftware/android/steam/community/AndroidUtils;->setTextViewText(Landroid/widget/TextView;Ljava/lang/String;)V
 
-    .line 777
+    .line 781
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity$18;->this$0:Lcom/valvesoftware/android/steam/community/activity/BaseActivity;
 
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity$18;->this$0:Lcom/valvesoftware/android/steam/community/activity/BaseActivity;
@@ -87,7 +87,7 @@
     # invokes: Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->loadAvatar(Lcom/valvesoftware/android/steam/community/model/Persona;Landroid/widget/ImageView;)V
     invoke-static {v0, v1, v2}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->access$1200(Lcom/valvesoftware/android/steam/community/activity/BaseActivity;Lcom/valvesoftware/android/steam/community/model/Persona;Landroid/widget/ImageView;)V
 
-    .line 778
+    .line 782
     return-void
 .end method
 
@@ -96,7 +96,7 @@
     .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
-    .line 772
+    .line 776
     check-cast p1, Lcom/valvesoftware/android/steam/community/model/Persona;
 
     .end local p1    # "x0":Ljava/lang/Object;
@@ -109,6 +109,6 @@
     .locals 0
 
     .prologue
-    .line 783
+    .line 787
     return-void
 .end method

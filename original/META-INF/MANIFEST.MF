@@ -402,7 +402,7 @@ Name: res/drawable-xhdpi-v4/common_signin_btn_text_disabled_light.9.pn
 SHA1-Digest: +qORW9oS7s5/oY5Z1R4KkQ+aJ1g=
 
 Name: res/layout/steamguard_fragment.xml
-SHA1-Digest: vmLucwCSTGSwTx2HnS5w3lNGtQI=
+SHA1-Digest: Gs1/+Z1n2ycKgj98N7hko/x0inI=
 
 Name: res/layout/tabs.xml
 SHA1-Digest: Ostbajtexz/DrWYHOfnRk68vO/8=
@@ -487,7 +487,7 @@ Name: res/drawable-xhdpi-v4/ic_action_steamguard.png
 SHA1-Digest: xj3v1+ZHOUVvx/VeJVY0RA9RW/w=
 
 Name: AndroidManifest.xml
-SHA1-Digest: aFtHIaaAjm7D8dQxQFxN3Uhi+G8=
+SHA1-Digest: gs9LmGHnDzBGcvThfFbhgrgzXjg=
 
 Name: res/drawable-mdpi-v4/abc_list_longpressed_holo.9.png
 SHA1-Digest: GFCjouEOsx2zwJ4qrfooYQ63590=
@@ -541,7 +541,7 @@ Name: res/layout/abc_list_menu_item_layout.xml
 SHA1-Digest: ndLGL47JzzpIqqn7a/PtOg2L5qE=
 
 Name: classes.dex
-SHA1-Digest: wkZGjCHIPwGrTRQTZ9airfiJfIY=
+SHA1-Digest: 49LR3isVNa+fNuGO9TnWTl5tQFs=
 
 Name: res/drawable-xhdpi-v4/ic_action_clear.png
 SHA1-Digest: xacCtq0dSTsJxK1xHXdhas8PHCc=
@@ -599,7 +599,7 @@ Name: res/drawable-hdpi-v4/common_signin_btn_icon_normal_light.9.png
 SHA1-Digest: T7jCCqaBHZydFrghJhlARmdI7xk=
 
 Name: res/layout/steamguard_widget.xml
-SHA1-Digest: qYDtSZPdXxfjaDyhN8dbVJ/6FGc=
+SHA1-Digest: YVZkxB0ut5vA25aJfp/QOSSuTCQ=
 
 Name: res/drawable-xxhdpi-v4/ic_action_expand_more.png
 SHA1-Digest: pLDU+RjlNLNYx0CUegEA8myMQiw=
@@ -1219,7 +1219,7 @@ Name: res/drawable-mdpi-v4/common_signin_btn_icon_disabled_dark.9.png
 SHA1-Digest: FMoZxbKyy1t4RWJZNFgkkfl6R2I=
 
 Name: resources.arsc
-SHA1-Digest: 65dy/ZNPE+MRbfDIyMu92k3J8Fk=
+SHA1-Digest: 6fMUXk0j/5MyQFsHgR8uzPu3blg=
 
 Name: res/anim/abc_fade_in.xml
 SHA1-Digest: ohPEA4mboaFUu9LZMUwk7FmjbPI=

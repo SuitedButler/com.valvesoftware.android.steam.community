@@ -36,6 +36,8 @@
 
 .field public static final enum k_EUserNotificationGroupInvite:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
+.field public static final enum k_EUserNotificationHelpRequestReply:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+
 .field public static final enum k_EUserNotificationInvalid:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
 .field public static final enum k_EUserNotificationItem:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
@@ -180,21 +182,34 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationOfflineMessage:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
-    .line 21
+    .line 20
     new-instance v0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
-    const-string v1, "k_EUserNotificationMax"
+    const-string v1, "k_EUserNotificationHelpRequestReply"
 
     const/16 v2, 0xa
 
     const/16 v3, 0xa
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;-><init>(Ljava/lang/String;IIZ)V
+
+    sput-object v0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationHelpRequestReply:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+
+    .line 22
+    new-instance v0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+
+    const-string v1, "k_EUserNotificationMax"
+
+    const/16 v2, 0xb
+
+    const/16 v3, 0xb
 
     invoke-direct {v0, v1, v2, v3, v5}, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;-><init>(Ljava/lang/String;IIZ)V
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationMax:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     .line 5
-    const/16 v0, 0xb
+    const/16 v0, 0xc
 
     new-array v0, v0, [Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
@@ -250,6 +265,12 @@
 
     const/16 v1, 0xa
 
+    sget-object v2, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationHelpRequestReply:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xb
+
     sget-object v2, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationMax:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     aput-object v2, v0, v1
@@ -270,16 +291,16 @@
     .end annotation
 
     .prologue
-    .line 24
+    .line 25
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 25
+    .line 26
     iput p3, p0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->value:I
 
-    .line 26
+    .line 27
     iput-boolean p4, p0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->supported:Z
 
-    .line 27
+    .line 28
     return-void
 .end method
 

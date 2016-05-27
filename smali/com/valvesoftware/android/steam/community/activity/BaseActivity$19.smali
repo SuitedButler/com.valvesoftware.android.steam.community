@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 791
+    .line 795
     iput-object p1, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity$19;->this$0:Lcom/valvesoftware/android/steam/community/activity/BaseActivity;
 
     iput-object p2, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity$19;->val$avatarView:Landroid/widget/ImageView;
@@ -42,11 +42,11 @@
     .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
-    .line 794
+    .line 798
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity$19;->val$avatarView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 795
+    .line 799
     return-void
 .end method

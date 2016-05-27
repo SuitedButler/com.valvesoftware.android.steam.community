@@ -139,6 +139,10 @@
 
     sget-object v1, Lcom/valvesoftware/android/steam/community/Config;->URL_HELP_BASE:Ljava/lang/String;
 
+    invoke-static {v1}, Lcom/valvesoftware/android/steam/community/SteamAppUri;->appendLanguageToUrl(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -244,6 +248,21 @@
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->mainActivityIntent(Landroid/content/Context;Landroid/net/Uri;)Landroid/content/Intent;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static notificationHelpRequestReplyIntent(Landroid/content/Context;)Landroid/content/Intent;
+    .locals 1
+    .param p0, "context"    # Landroid/content/Context;
+
+    .prologue
+    .line 177
+    const-string v0, "/wizard/HelpRequests"
+
+    invoke-static {p0, v0}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->helpURLIntent(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 

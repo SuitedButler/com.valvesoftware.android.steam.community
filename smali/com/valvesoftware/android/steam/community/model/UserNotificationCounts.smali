@@ -24,7 +24,7 @@
     .locals 1
 
     .prologue
-    .line 30
+    .line 31
     sget-object v0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationMax:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     iget v0, v0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->value:I
@@ -38,17 +38,17 @@
     .locals 1
 
     .prologue
-    .line 35
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 36
+    .line 37
     sget v0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;->MAX_NOTIFICATION_TYPES:I
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;->m_rgNotificationCounts:[I
 
-    .line 37
+    .line 38
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .locals 3
 
     .prologue
-    .line 66
+    .line 67
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -67,19 +67,19 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 67
+    .line 68
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;->m_rgNotificationCounts:[I
 
     const/4 v2, 0x0
 
     aput v2, v1, v0
 
-    .line 66
+    .line 67
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 68
+    .line 69
     :cond_0
     return-void
 .end method
@@ -89,12 +89,12 @@
     .param p1, "eUserNotification"    # Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     .prologue
-    .line 58
+    .line 59
     sget-object v0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationFriendInvite:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     if-ne p1, v0, :cond_0
 
-    .line 59
+    .line 60
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;->m_rgNotificationCounts:[I
 
     sget-object v1, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationFriendInvite:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
@@ -113,7 +113,7 @@
 
     add-int/2addr v0, v1
 
-    .line 61
+    .line 62
     :goto_0
     return v0
 
@@ -131,10 +131,10 @@
     .locals 7
 
     .prologue
-    .line 41
+    .line 42
     const/4 v1, 0x0
 
-    .line 42
+    .line 43
     .local v1, "cTotalNotifications":I
     invoke-static {}, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->values()[Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
@@ -152,13 +152,13 @@
 
     aget-object v2, v0, v3
 
-    .line 43
+    .line 44
     .local v2, "eUserNotification":Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
     iget-boolean v5, v2, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->supported:Z
 
     if-eqz v5, :cond_0
 
-    .line 44
+    .line 45
     iget-object v5, p0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;->m_rgNotificationCounts:[I
 
     iget v6, v2, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->value:I
@@ -167,13 +167,13 @@
 
     add-int/2addr v1, v5
 
-    .line 42
+    .line 43
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 46
+    .line 47
     .end local v2    # "eUserNotification":Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
     :cond_1
     return v1
@@ -185,19 +185,19 @@
     .param p2, "value"    # I
 
     .prologue
-    .line 51
+    .line 52
     if-lez p1, :cond_0
 
     sget v0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;->MAX_NOTIFICATION_TYPES:I
 
     if-ge p1, v0, :cond_0
 
-    .line 52
+    .line 53
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;->m_rgNotificationCounts:[I
 
     aput p2, v0, p1
 
-    .line 53
+    .line 54
     :cond_0
     return-void
 .end method
@@ -207,7 +207,7 @@
     .param p1, "other"    # Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;
 
     .prologue
-    .line 72
+    .line 73
     const/4 v0, 0x1
 
     .local v0, "i":I
@@ -216,14 +216,14 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 74
+    .line 75
     iget-object v1, p1, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;->m_rgNotificationCounts:[I
 
     array-length v1, v1
 
     if-ge v0, v1, :cond_0
 
-    .line 75
+    .line 76
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;->m_rgNotificationCounts:[I
 
     iget-object v2, p1, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;->m_rgNotificationCounts:[I
@@ -232,13 +232,13 @@
 
     aput v2, v1, v0
 
-    .line 72
+    .line 73
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 77
+    .line 78
     :cond_0
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;->m_rgNotificationCounts:[I
 
@@ -248,7 +248,7 @@
 
     goto :goto_1
 
-    .line 79
+    .line 80
     :cond_1
     return-void
 .end method

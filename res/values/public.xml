@@ -650,12 +650,13 @@
     <public type="string" name="webview_ssl_untrusted_prompt_ok_once" id="0x7f0700fa" />
     <public type="string" name="abc_toolbar_collapse_description" id="0x7f0700fb" />
     <public type="string" name="fake_next" id="0x7f0700fc" />
-    <public type="string" name="notification_newlogin" id="0x7f0700fd" />
-    <public type="string" name="notification_newlogin_short_body" id="0x7f0700fe" />
-    <public type="string" name="steamguard_rcode_button" id="0x7f0700ff" />
-    <public type="string" name="widget_no_code" id="0x7f070100" />
-    <public type="string" name="widget_no_steamguard" id="0x7f070101" />
-    <public type="string" name="widget_touch_to_refresh" id="0x7f070102" />
+    <public type="string" name="notification_helprequestreply" id="0x7f0700fd" />
+    <public type="string" name="notification_newlogin" id="0x7f0700fe" />
+    <public type="string" name="notification_newlogin_short_body" id="0x7f0700ff" />
+    <public type="string" name="steamguard_rcode_button" id="0x7f070100" />
+    <public type="string" name="widget_no_code" id="0x7f070101" />
+    <public type="string" name="widget_no_steamguard" id="0x7f070102" />
+    <public type="string" name="widget_touch_to_refresh" id="0x7f070103" />
     <public type="bool" name="abc_action_bar_embed_tabs_pre_jb" id="0x7f080000" />
     <public type="bool" name="abc_config_allowActionMenuItemTextWithIcon" id="0x7f080001" />
     <public type="bool" name="abc_action_bar_embed_tabs" id="0x7f080002" />

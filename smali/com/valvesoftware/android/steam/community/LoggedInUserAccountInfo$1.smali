@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 314
+    .line 319
     iput-object p1, p0, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$1;->val$steamWebView:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
     invoke-direct {p0}, Lcom/valvesoftware/android/steam/community/webrequests/ResponseListener;-><init>()V
@@ -38,7 +38,7 @@
     .param p1, "errorInfo"    # Lcom/valvesoftware/android/steam/community/webrequests/RequestErrorInfo;
 
     .prologue
-    .line 336
+    .line 341
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .param p1, "response"    # Lorg/json/JSONObject;
 
     .prologue
-    .line 317
+    .line 322
     const-string v2, "token"
 
     const-string v3, ""
@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    .line 318
+    .line 323
     .local v0, "wgtoken":Ljava/lang/String;
     const-string v2, "token_secure"
 
@@ -66,7 +66,7 @@
 
     move-result-object v1
 
-    .line 320
+    .line 325
     .local v1, "wgtoken_secure":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -80,25 +80,25 @@
 
     if-nez v2, :cond_1
 
-    .line 322
+    .line 327
     :cond_0
     invoke-static {}, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->logOut()V
 
-    .line 323
+    .line 328
     const-wide/16 v2, 0x0
 
     # setter for: Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->s_lLastWGTokenFailureMS:J
     invoke-static {v2, v3}, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->access$002(J)J
 
-    .line 331
+    .line 336
     :goto_0
     return-void
 
-    .line 327
+    .line 332
     :cond_1
     invoke-static {v0, v1}, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->updateWGToken(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 328
+    .line 333
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -106,7 +106,7 @@
     # setter for: Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->s_lLastWGTokenFailureMS:J
     invoke-static {v2, v3}, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->access$002(J)J
 
-    .line 329
+    .line 334
     iget-object v2, p0, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$1;->val$steamWebView:Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
     invoke-virtual {v2}, Lcom/valvesoftware/android/steam/community/views/SteamWebView;->reload()V

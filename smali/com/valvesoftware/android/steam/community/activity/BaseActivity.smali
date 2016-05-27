@@ -249,7 +249,7 @@
     .locals 4
 
     .prologue
-    .line 807
+    .line 811
     const-string v2, "input_method"
 
     invoke-virtual {p0, v2}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -258,17 +258,17 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 808
+    .line 812
     .local v0, "inputMethodManager":Landroid/view/inputmethod/InputMethodManager;
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->getCurrentFocus()Landroid/view/View;
 
     move-result-object v1
 
-    .line 809
+    .line 813
     .local v1, "view":Landroid/view/View;
     if-eqz v1, :cond_0
 
-    .line 810
+    .line 814
     invoke-virtual {v1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
     move-result-object v2
@@ -277,7 +277,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 812
+    .line 816
     :cond_0
     return-void
 .end method
@@ -966,14 +966,14 @@
     .param p2, "avatarView"    # Landroid/widget/ImageView;
 
     .prologue
-    .line 789
+    .line 793
     iget-object v1, p1, Lcom/valvesoftware/android/steam/community/model/Persona;->fullAvatarUrl:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/valvesoftware/android/steam/community/webrequests/Endpoints;->getImageUrlRequestBuilder(Ljava/lang/String;)Lcom/valvesoftware/android/steam/community/webrequests/ImageRequestBuilder;
 
     move-result-object v0
 
-    .line 791
+    .line 795
     .local v0, "requestBuilder":Lcom/valvesoftware/android/steam/community/webrequests/ImageRequestBuilder;
     new-instance v1, Lcom/valvesoftware/android/steam/community/activity/BaseActivity$19;
 
@@ -981,14 +981,14 @@
 
     invoke-virtual {v0, v1}, Lcom/valvesoftware/android/steam/community/webrequests/ImageRequestBuilder;->setResponseListener(Lcom/valvesoftware/android/steam/community/webrequests/ImageResponseListener;)V
 
-    .line 803
+    .line 807
     invoke-static {}, Lcom/valvesoftware/android/steam/community/SteamCommunityApplication;->GetInstance()Lcom/valvesoftware/android/steam/community/SteamCommunityApplication;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Lcom/valvesoftware/android/steam/community/SteamCommunityApplication;->sendRequest(Lcom/valvesoftware/android/steam/community/webrequests/RequestBuilder;)V
 
-    .line 804
+    .line 808
     return-void
 .end method
 
@@ -998,24 +998,24 @@
     .param p2, "nameView"    # Landroid/widget/TextView;
 
     .prologue
-    .line 766
+    .line 770
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->loggedInUser:Lcom/valvesoftware/android/steam/community/model/Persona;
 
     if-eqz v0, :cond_0
 
-    .line 767
+    .line 771
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->loggedInUser:Lcom/valvesoftware/android/steam/community/model/Persona;
 
     iget-object v0, v0, Lcom/valvesoftware/android/steam/community/model/Persona;->personaName:Ljava/lang/String;
 
     invoke-static {p2, v0}, Lcom/valvesoftware/android/steam/community/AndroidUtils;->setTextViewText(Landroid/widget/TextView;Ljava/lang/String;)V
 
-    .line 768
+    .line 772
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->loggedInUser:Lcom/valvesoftware/android/steam/community/model/Persona;
 
     invoke-direct {p0, v0, p1}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->loadAvatar(Lcom/valvesoftware/android/steam/community/model/Persona;Landroid/widget/ImageView;)V
 
-    .line 771
+    .line 775
     :cond_0
     invoke-static {}, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->getLoginSteamID()Ljava/lang/String;
 
@@ -1033,7 +1033,7 @@
 
     if-lez v0, :cond_1
 
-    .line 772
+    .line 776
     invoke-static {}, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->getLoginSteamID()Ljava/lang/String;
 
     move-result-object v0
@@ -1044,7 +1044,7 @@
 
     invoke-static {v0, v1}, Lcom/valvesoftware/android/steam/community/PersonaRepository;->getDetailedPersonaInfo(Ljava/lang/String;Lcom/valvesoftware/android/steam/community/RepositoryCallback;)V
 
-    .line 786
+    .line 790
     :cond_1
     return-void
 .end method
@@ -1317,71 +1317,47 @@
 .end method
 
 .method protected getNotificationNavigationItems(Landroid/support/v4/widget/DrawerLayout;)Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;
-    .locals 16
+    .locals 18
     .param p1, "drawerLayout"    # Landroid/support/v4/widget/DrawerLayout;
 
     .prologue
     .line 663
     invoke-static {}, Lcom/valvesoftware/android/steam/community/SteamCommunityApplication;->GetInstance()Lcom/valvesoftware/android/steam/community/SteamCommunityApplication;
 
-    move-result-object v14
+    move-result-object v16
 
     .line 664
-    .local v14, "context":Landroid/content/Context;
-    new-instance v15, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem$NavDrawerGroupItem;
+    .local v16, "context":Landroid/content/Context;
+    new-instance v17, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem$NavDrawerGroupItem;
 
-    const v9, 0x7f070056
+    const v11, 0x7f070056
 
-    const v10, 0x7f070056
+    const v12, 0x7f070056
 
-    move-object/from16 v0, p1
+    move-object/from16 v0, v17
 
-    invoke-direct {v15, v9, v10, v0}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem$NavDrawerGroupItem;-><init>(IILandroid/support/v4/widget/DrawerLayout;)V
+    move-object/from16 v1, p1
+
+    invoke-direct {v0, v11, v12, v1}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem$NavDrawerGroupItem;-><init>(IILandroid/support/v4/widget/DrawerLayout;)V
 
     .line 665
-    .local v15, "notificationGroup":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
-    sget-object v9, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationInvalid:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+    .local v17, "notificationGroup":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
+    sget-object v11, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationInvalid:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v9, v15}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
+    move-object/from16 v1, v17
+
+    invoke-virtual {v0, v11, v1}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
 
     .line 667
-    new-instance v1, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
-
-    const v2, 0x7f070056
-
-    const v3, 0x7f0700af
-
-    invoke-static {v14}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationCommentsIntent(Landroid/content/Context;)Landroid/content/Intent;
-
-    move-result-object v4
-
-    const/4 v6, 0x0
-
-    move-object/from16 v5, p1
-
-    invoke-direct/range {v1 .. v6}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;-><init>(IILandroid/content/Intent;Landroid/support/v4/widget/DrawerLayout;Z)V
-
-    .line 668
-    .local v1, "commentNotifications":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
-    sget-object v9, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationComment:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v9, v1}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
-
-    .line 669
-    invoke-virtual {v15, v1}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
-
-    .line 671
     new-instance v2, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
 
     const v3, 0x7f070056
 
-    const v4, 0x7f0700b2
+    const v4, 0x7f0700af
 
-    invoke-static {v14}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationItemsIntent(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-static/range {v16 .. v16}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationCommentsIntent(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v5
 
@@ -1391,25 +1367,27 @@
 
     invoke-direct/range {v2 .. v7}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;-><init>(IILandroid/content/Intent;Landroid/support/v4/widget/DrawerLayout;Z)V
 
-    .line 672
-    .local v2, "items":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
-    sget-object v9, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationItem:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+    .line 668
+    .local v2, "commentNotifications":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
+    sget-object v11, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationComment:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v9, v2}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
+    invoke-virtual {v0, v11, v2}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
 
-    .line 673
-    invoke-virtual {v15, v2}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+    .line 669
+    move-object/from16 v0, v17
 
-    .line 675
+    invoke-virtual {v0, v2}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+
+    .line 671
     new-instance v3, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
 
     const v4, 0x7f070056
 
-    const v5, 0x7f0700b1
+    const v5, 0x7f0700b2
 
-    invoke-static {v14}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationInvitesIntent(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-static/range {v16 .. v16}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationItemsIntent(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v6
 
@@ -1419,25 +1397,27 @@
 
     invoke-direct/range {v3 .. v8}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;-><init>(IILandroid/content/Intent;Landroid/support/v4/widget/DrawerLayout;Z)V
 
-    .line 676
-    .local v3, "invites":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
-    sget-object v9, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationFriendInvite:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+    .line 672
+    .local v3, "items":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
+    sget-object v11, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationItem:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v9, v3}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
+    invoke-virtual {v0, v11, v3}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
 
-    .line 677
-    invoke-virtual {v15, v3}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+    .line 673
+    move-object/from16 v0, v17
 
-    .line 679
+    invoke-virtual {v0, v3}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+
+    .line 675
     new-instance v4, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
 
     const v5, 0x7f070056
 
-    const v6, 0x7f0700b0
+    const v6, 0x7f0700b1
 
-    invoke-static {v14}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationGiftsIntent(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-static/range {v16 .. v16}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationInvitesIntent(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v7
 
@@ -1447,53 +1427,57 @@
 
     invoke-direct/range {v4 .. v9}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;-><init>(IILandroid/content/Intent;Landroid/support/v4/widget/DrawerLayout;Z)V
 
-    .line 680
-    .local v4, "gifts":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
-    sget-object v9, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationGift:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+    .line 676
+    .local v4, "invites":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
+    sget-object v11, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationFriendInvite:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v9, v4}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
+    invoke-virtual {v0, v11, v4}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
 
-    .line 681
-    invoke-virtual {v15, v4}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+    .line 677
+    move-object/from16 v0, v17
 
-    .line 683
+    invoke-virtual {v0, v4}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+
+    .line 679
     new-instance v5, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
 
     const v6, 0x7f070056
 
-    const v7, 0x7f0700b4
+    const v7, 0x7f0700b0
 
-    invoke-static {v14}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationTradeOffersIntent(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-static/range {v16 .. v16}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationGiftsIntent(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v8
 
-    const/4 v10, 0x1
+    const/4 v10, 0x0
 
     move-object/from16 v9, p1
 
     invoke-direct/range {v5 .. v10}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;-><init>(IILandroid/content/Intent;Landroid/support/v4/widget/DrawerLayout;Z)V
 
-    .line 684
-    .local v5, "tradeOffers":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
-    sget-object v9, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationTradeOffer:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+    .line 680
+    .local v5, "gifts":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
+    sget-object v11, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationGift:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v9, v5}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
+    invoke-virtual {v0, v11, v5}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
 
-    .line 685
-    invoke-virtual {v15, v5}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+    .line 681
+    move-object/from16 v0, v17
 
-    .line 687
+    invoke-virtual {v0, v5}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+
+    .line 683
     new-instance v6, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
 
     const v7, 0x7f070056
 
-    const v8, 0x7f0700ac
+    const v8, 0x7f0700b4
 
-    invoke-static {v14}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->viewFriendsList(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-static/range {v16 .. v16}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationTradeOffersIntent(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v9
 
@@ -1503,25 +1487,27 @@
 
     invoke-direct/range {v6 .. v11}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;-><init>(IILandroid/content/Intent;Landroid/support/v4/widget/DrawerLayout;Z)V
 
-    .line 688
-    .local v6, "offlineMessages":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
-    sget-object v9, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationOfflineMessage:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+    .line 684
+    .local v6, "tradeOffers":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
+    sget-object v11, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationTradeOffer:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v9, v6}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
+    invoke-virtual {v0, v11, v6}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
 
-    .line 689
-    invoke-virtual {v15, v6}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+    .line 685
+    move-object/from16 v0, v17
 
-    .line 691
+    invoke-virtual {v0, v6}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+
+    .line 687
     new-instance v7, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
 
     const v8, 0x7f070056
 
-    const v9, 0x7f0700ab
+    const v9, 0x7f0700ac
 
-    invoke-static {v14}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationAsyncGameIntent(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-static/range {v16 .. v16}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->viewFriendsList(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v10
 
@@ -1531,25 +1517,27 @@
 
     invoke-direct/range {v7 .. v12}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;-><init>(IILandroid/content/Intent;Landroid/support/v4/widget/DrawerLayout;Z)V
 
-    .line 692
-    .local v7, "asyncgame":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
-    sget-object v9, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationAsyncGameState:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+    .line 688
+    .local v7, "offlineMessages":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
+    sget-object v11, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationOfflineMessage:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v9, v7}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
+    invoke-virtual {v0, v11, v7}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
 
-    .line 693
-    invoke-virtual {v15, v7}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+    .line 689
+    move-object/from16 v0, v17
 
-    .line 695
+    invoke-virtual {v0, v7}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+
+    .line 691
     new-instance v8, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
 
     const v9, 0x7f070056
 
-    const v10, 0x7f0700b3
+    const v10, 0x7f0700ab
 
-    invoke-static {v14}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationModeratorMessageIntent(Landroid/content/Context;)Landroid/content/Intent;
+    invoke-static/range {v16 .. v16}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationAsyncGameIntent(Landroid/content/Context;)Landroid/content/Intent;
 
     move-result-object v11
 
@@ -1559,19 +1547,81 @@
 
     invoke-direct/range {v8 .. v13}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;-><init>(IILandroid/content/Intent;Landroid/support/v4/widget/DrawerLayout;Z)V
 
-    .line 696
-    .local v8, "moderatormessages":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
-    sget-object v9, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationModeratorMessage:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+    .line 692
+    .local v8, "asyncgame":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
+    sget-object v11, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationAsyncGameState:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v9, v8}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
+    invoke-virtual {v0, v11, v8}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
+
+    .line 693
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v8}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+
+    .line 695
+    new-instance v9, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
+
+    const v10, 0x7f070056
+
+    const v11, 0x7f0700b3
+
+    invoke-static/range {v16 .. v16}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationModeratorMessageIntent(Landroid/content/Context;)Landroid/content/Intent;
+
+    move-result-object v12
+
+    const/4 v14, 0x1
+
+    move-object/from16 v13, p1
+
+    invoke-direct/range {v9 .. v14}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;-><init>(IILandroid/content/Intent;Landroid/support/v4/widget/DrawerLayout;Z)V
+
+    .line 696
+    .local v9, "moderatormessages":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
+    sget-object v11, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationModeratorMessage:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11, v9}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
 
     .line 697
-    invoke-virtual {v15, v8}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v9}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
 
     .line 699
-    return-object v15
+    new-instance v10, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
+
+    const v11, 0x7f070056
+
+    const v12, 0x7f0700fd
+
+    invoke-static/range {v16 .. v16}, Lcom/valvesoftware/android/steam/community/SteamAppIntents;->notificationHelpRequestReplyIntent(Landroid/content/Context;)Landroid/content/Intent;
+
+    move-result-object v13
+
+    const/4 v15, 0x1
+
+    move-object/from16 v14, p1
+
+    invoke-direct/range {v10 .. v15}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;-><init>(IILandroid/content/Intent;Landroid/support/v4/widget/DrawerLayout;Z)V
+
+    .line 700
+    .local v10, "helprequestreply":Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
+    sget-object v11, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationHelpRequestReply:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v11, v10}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->registerNotificationDrawerItem(Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;)V
+
+    .line 701
+    move-object/from16 v0, v17
+
+    invoke-virtual {v0, v10}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->add(Lcom/valvesoftware/android/steam/community/fragment/NavDrawerItem;)V
+
+    .line 703
+    return-object v17
 .end method
 
 .method protected getSearchBar()Lcom/valvesoftware/android/steam/community/fragment/SearchBarFragment;
@@ -1647,21 +1697,21 @@
     .locals 3
 
     .prologue
-    .line 753
+    .line 757
     invoke-direct {p0}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->useLimitedMenuBar()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 754
+    .line 758
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->menuBar:Lcom/valvesoftware/android/steam/community/views/MenuBar;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Lcom/valvesoftware/android/steam/community/views/MenuBar;->setVisibility(I)V
 
-    .line 762
+    .line 766
     :cond_0
     :goto_0
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->drawerLayout:Landroid/support/v4/widget/DrawerLayout;
@@ -1670,20 +1720,20 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v4/widget/DrawerLayout;->setDrawerLockMode(I)V
 
-    .line 763
+    .line 767
     return-void
 
-    .line 756
+    .line 760
     :cond_1
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->getSupportActionBar()Landroid/support/v7/app/ActionBar;
 
     move-result-object v0
 
-    .line 757
+    .line 761
     .local v0, "supportActionBar":Landroid/support/v7/app/ActionBar;
     if-eqz v0, :cond_0
 
-    .line 758
+    .line 762
     invoke-virtual {v0}, Landroid/support/v7/app/ActionBar;->hide()V
 
     goto :goto_0
@@ -1769,21 +1819,21 @@
     .param p3, "data"    # Landroid/content/Intent;
 
     .prologue
-    .line 821
+    .line 825
     if-nez p3, :cond_1
 
-    .line 828
+    .line 832
     :cond_0
     :goto_0
     return-void
 
-    .line 822
+    .line 826
     :cond_1
     sget v1, Lcom/valvesoftware/android/steam/community/SettingInfoDB;->ringToneSelectorRequestCode:I
 
     if-ne p1, v1, :cond_0
 
-    .line 824
+    .line 828
     const-string v1, "android.intent.extra.ringtone.PICKED_URI"
 
     invoke-virtual {p3, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -1792,11 +1842,11 @@
 
     check-cast v0, Landroid/net/Uri;
 
-    .line 825
+    .line 829
     .local v0, "uri":Landroid/net/Uri;
     if-eqz v0, :cond_0
 
-    .line 826
+    .line 830
     invoke-static {}, Lcom/valvesoftware/android/steam/community/SteamCommunityApplication;->GetInstance()Lcom/valvesoftware/android/steam/community/SteamCommunityApplication;
 
     move-result-object v1
@@ -1936,10 +1986,10 @@
     .locals 8
 
     .prologue
-    .line 713
+    .line 717
     const/4 v0, 0x0
 
-    .line 714
+    .line 718
     .local v0, "bNeedRefresh":Z
     iget-object v6, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->userNotificationCounts:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;
 
@@ -1947,7 +1997,7 @@
 
     move-result v2
 
-    .line 715
+    .line 719
     .local v2, "cTotalNotifications":I
     iget-object v6, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->m_listNotificationNavItems:Ljava/util/List;
 
@@ -1970,7 +2020,7 @@
 
     check-cast v5, Landroid/util/Pair;
 
-    .line 719
+    .line 723
     .local v5, "pair":Landroid/util/Pair;, "Landroid/util/Pair<Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;>;"
     iget-object v6, v5, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -1978,10 +2028,10 @@
 
     if-ne v6, v7, :cond_1
 
-    .line 720
+    .line 724
     move v3, v2
 
-    .line 724
+    .line 728
     .local v3, "count":I
     :goto_1
     iget-object v6, v5, Landroid/util/Pair;->second:Ljava/lang/Object;
@@ -1992,7 +2042,7 @@
 
     move-result v1
 
-    .line 726
+    .line 730
     .local v1, "bWasHidden":Z
     iget-object v6, v5, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -2000,7 +2050,7 @@
 
     invoke-virtual {v6, v3}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->setNotificationCount(I)V
 
-    .line 728
+    .line 732
     iget-object v6, v5, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v6, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
@@ -2011,12 +2061,12 @@
 
     if-eq v1, v6, :cond_0
 
-    .line 729
+    .line 733
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 722
+    .line 726
     .end local v1    # "bWasHidden":Z
     .end local v3    # "count":I
     :cond_1
@@ -2033,20 +2083,20 @@
     .restart local v3    # "count":I
     goto :goto_1
 
-    .line 734
+    .line 738
     .end local v3    # "count":I
     .end local v5    # "pair":Landroid/util/Pair;, "Landroid/util/Pair<Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;>;"
     :cond_2
     if-eqz v0, :cond_3
 
-    .line 735
+    .line 739
     iget-object v6, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->expandableListView:Landroid/widget/ExpandableListView;
 
     iget-object v7, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->navDrawerListAdapter:Lcom/valvesoftware/android/steam/community/fragment/NavDrawerListAdapter;
 
     invoke-virtual {v6, v7}, Landroid/widget/ExpandableListView;->setAdapter(Landroid/widget/ExpandableListAdapter;)V
 
-    .line 737
+    .line 741
     :cond_3
     return-void
 .end method
@@ -2358,12 +2408,12 @@
     .param p2, "item"    # Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;
 
     .prologue
-    .line 703
+    .line 707
     sget-object v0, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;->k_EUserNotificationInvalid:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts$EUserNotification;
 
     if-ne p1, v0, :cond_0
 
-    .line 704
+    .line 708
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->userNotificationCounts:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;
 
     invoke-virtual {v0}, Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;->GetTotalNotificationCount()I
@@ -2372,7 +2422,7 @@
 
     invoke-virtual {p2, v0}, Lcom/valvesoftware/android/steam/community/fragment/NavDrawerNotificationItem;->setNotificationCount(I)V
 
-    .line 708
+    .line 712
     :goto_0
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->m_listNotificationNavItems:Ljava/util/List;
 
@@ -2382,10 +2432,10 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 709
+    .line 713
     return-void
 
-    .line 706
+    .line 710
     :cond_0
     iget-object v0, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->userNotificationCounts:Lcom/valvesoftware/android/steam/community/model/UserNotificationCounts;
 
@@ -2838,39 +2888,39 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 740
+    .line 744
     invoke-direct {p0}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->useLimitedMenuBar()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 741
+    .line 745
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->menuBar:Lcom/valvesoftware/android/steam/community/views/MenuBar;
 
     invoke-virtual {v1, v2}, Lcom/valvesoftware/android/steam/community/views/MenuBar;->setVisibility(I)V
 
-    .line 749
+    .line 753
     :cond_0
     :goto_0
     iget-object v1, p0, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->drawerLayout:Landroid/support/v4/widget/DrawerLayout;
 
     invoke-virtual {v1, v2}, Landroid/support/v4/widget/DrawerLayout;->setDrawerLockMode(I)V
 
-    .line 750
+    .line 754
     return-void
 
-    .line 743
+    .line 747
     :cond_1
     invoke-virtual {p0}, Lcom/valvesoftware/android/steam/community/activity/BaseActivity;->getSupportActionBar()Landroid/support/v7/app/ActionBar;
 
     move-result-object v0
 
-    .line 744
+    .line 748
     .local v0, "supportActionBar":Landroid/support/v7/app/ActionBar;
     if-eqz v0, :cond_0
 
-    .line 745
+    .line 749
     invoke-virtual {v0}, Landroid/support/v7/app/ActionBar;->show()V
 
     goto :goto_0

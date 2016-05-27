@@ -255,6 +255,7 @@ Please make sure you have a valid internet connection."</string>
     <string name="webview_ssl_untrusted_prompt_ok_once">Proceed Once</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="fake_next">〉</string>
+    <string name="notification_helprequestreply">Steam Support replies</string>
     <string name="notification_newlogin" formatted="false">New Steam login for %accountname%</string>
     <string name="notification_newlogin_short_body" formatted="false">Use code %code%</string>
     <string name="steamguard_rcode_button">My Recovery Code</string>

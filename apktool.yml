@@ -1,17 +1,22 @@
-version: 2.0.2
-apkFileName: com.valvesoftware.android.steam.community_v2.1.5.apk
+!!brut.androlib.meta.MetaInfo
+apkFileName: com.valvesoftware.android.steam.community_2.1.6-3472020_minAPI8(nodpi)_apkmirror.com.apk
+compressionType: false
+doNotCompress:
+- arsc
 isFrameworkApk: false
-usesFramework:
-  ids:
-  - 1
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
 sdkInfo:
   minSdkVersion: '8'
   targetSdkVersion: '21'
-packageInfo:
-  forced-package-id: '127'
-versionInfo:
-  versionCode: '3390488'
-  versionName: 2.1.5
 sharedLibrary: false
-doNotCompress:
-- resources.arsc
+unknownFiles: {}
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.1.1
+versionInfo:
+  versionCode: '3472020'
+  versionName: 2.1.6

@@ -72,7 +72,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->s_strLanguage:Ljava/lang/String;
 
-    .line 296
+    .line 301
     const-wide/16 v0, 0x0
 
     sput-wide v0, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->s_lLastWGTokenFailureMS:J
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 287
+    .line 292
     sget-boolean v0, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->dontLoginToChat:Z
 
     return v0
@@ -109,6 +109,16 @@
     sget-object v0, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->loginInformation:Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$LoginInformation;
 
     iget-object v0, v0, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$LoginInformation;->accessToken:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public static getLanguage()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 242
+    sget-object v0, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->s_strLanguage:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -195,19 +205,19 @@
     .param p0, "steamWebView"    # Lcom/valvesoftware/android/steam/community/views/SteamWebView;
 
     .prologue
-    .line 301
+    .line 306
     invoke-static {}, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->isLoggedIn()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 340
+    .line 345
     :cond_0
     :goto_0
     return-void
 
-    .line 305
+    .line 310
     :cond_1
     sget-wide v2, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->s_lLastWGTokenFailureMS:J
 
@@ -231,7 +241,7 @@
 
     if-gtz v1, :cond_0
 
-    .line 311
+    .line 316
     :cond_2
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -239,12 +249,12 @@
 
     sput-wide v2, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->s_lLastWGTokenFailureMS:J
 
-    .line 313
+    .line 318
     invoke-static {}, Lcom/valvesoftware/android/steam/community/webrequests/Endpoints;->getWGToken()Lcom/valvesoftware/android/steam/community/webrequests/JsonRequestBuilder;
 
     move-result-object v0
 
-    .line 314
+    .line 319
     .local v0, "requestBuilder":Lcom/valvesoftware/android/steam/community/webrequests/RequestBuilder;
     new-instance v1, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$1;
 
@@ -252,7 +262,7 @@
 
     invoke-virtual {v0, v1}, Lcom/valvesoftware/android/steam/community/webrequests/RequestBuilder;->setResponseListener(Lcom/valvesoftware/android/steam/community/webrequests/ResponseListener;)V
 
-    .line 339
+    .line 344
     invoke-static {}, Lcom/valvesoftware/android/steam/community/SteamCommunityApplication;->GetInstance()Lcom/valvesoftware/android/steam/community/SteamCommunityApplication;
 
     move-result-object v1
@@ -533,15 +543,15 @@
     .param p0, "dontLoginToChat"    # Z
 
     .prologue
-    .line 291
+    .line 296
     sget-boolean v0, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->dontLoginToChat:Z
 
     if-eq p0, v0, :cond_0
 
-    .line 292
+    .line 297
     sput-boolean p0, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->dontLoginToChat:Z
 
-    .line 294
+    .line 299
     :cond_0
     return-void
 .end method
@@ -709,29 +719,29 @@
     .locals 14
 
     .prologue
-    .line 250
+    .line 255
     sget-boolean v12, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->s_bCookiesAreOutOfDate:Z
 
     if-nez v12, :cond_0
 
-    .line 284
+    .line 289
     .local v1, "cm":Landroid/webkit/CookieManager;
     :goto_0
     return-void
 
-    .line 253
+    .line 258
     .end local v1    # "cm":Landroid/webkit/CookieManager;
     :cond_0
     const/4 v12, 0x0
 
     sput-boolean v12, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->s_bCookiesAreOutOfDate:Z
 
-    .line 255
+    .line 260
     invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
 
     move-result-object v1
 
-    .line 257
+    .line 262
     .restart local v1    # "cm":Landroid/webkit/CookieManager;
     sget-object v12, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->s_cookiesConfiguration:Ljava/util/Map;
 
@@ -756,7 +766,7 @@
 
     check-cast v11, Ljava/util/Map$Entry;
 
-    .line 259
+    .line 264
     .local v11, "urlEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/Map<Ljava/lang/String;Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$CWebCookie;>;>;"
     invoke-interface {v11}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -786,7 +796,7 @@
 
     check-cast v4, Ljava/util/Map$Entry;
 
-    .line 261
+    .line 266
     .local v4, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$CWebCookie;>;"
     invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -794,7 +804,7 @@
 
     check-cast v2, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$CWebCookie;
 
-    .line 265
+    .line 270
     .local v2, "cookie":Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$CWebCookie;
     :try_start_0
     iget-object v12, v2, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$CWebCookie;->m_value:Ljava/lang/String;
@@ -811,14 +821,14 @@
 
     move-result-object v9
 
-    .line 270
+    .line 275
     .local v9, "sEncodedValue":Ljava/lang/String;
     :goto_2
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 272
+    .line 277
     .local v3, "cookieString":Ljava/lang/StringBuilder;
     invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -828,15 +838,15 @@
 
     invoke-virtual {v3, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 273
+    .line 278
     const-string v12, "="
 
     invoke-virtual {v3, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 274
+    .line 279
     invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 275
+    .line 280
     iget-boolean v12, v2, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$CWebCookie;->m_secure:Z
 
     if-eqz v12, :cond_3
@@ -845,7 +855,7 @@
 
     invoke-virtual {v3, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 276
+    .line 281
     :cond_3
     iget-boolean v12, v2, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$CWebCookie;->m_httponly:Z
 
@@ -855,7 +865,7 @@
 
     invoke-virtual {v3, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 278
+    .line 283
     :cond_4
     sget-object v0, Lcom/valvesoftware/android/steam/community/Config;->WG_AUTH_DOMAINS:[Ljava/lang/String;
 
@@ -871,7 +881,7 @@
 
     aget-object v10, v0, v7
 
-    .line 279
+    .line 284
     .local v10, "url":Ljava/lang/String;
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -879,12 +889,12 @@
 
     invoke-virtual {v1, v10, v12}, Landroid/webkit/CookieManager;->setCookie(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 278
+    .line 283
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_3
 
-    .line 265
+    .line 270
     .end local v0    # "arr$":[Ljava/lang/String;
     .end local v3    # "cookieString":Ljava/lang/StringBuilder;
     .end local v7    # "i$":I
@@ -899,7 +909,7 @@
 
     goto :goto_2
 
-    .line 283
+    .line 288
     .end local v2    # "cookie":Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$CWebCookie;
     .end local v4    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$CWebCookie;>;"
     .end local v11    # "urlEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/Map<Ljava/lang/String;Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$CWebCookie;>;>;"
@@ -912,7 +922,7 @@
 
     goto/16 :goto_0
 
-    .line 267
+    .line 272
     .restart local v2    # "cookie":Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$CWebCookie;
     .restart local v4    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$CWebCookie;>;"
     .restart local v11    # "urlEntry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/Map<Ljava/lang/String;Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo$CWebCookie;>;>;"
@@ -926,7 +936,7 @@
     .locals 3
 
     .prologue
-    .line 241
+    .line 246
     invoke-static {}, Lcom/valvesoftware/android/steam/community/SteamCommunityApplication;->GetInstance()Lcom/valvesoftware/android/steam/community/SteamCommunityApplication;
 
     move-result-object v1
@@ -937,7 +947,7 @@
 
     move-result-object v0
 
-    .line 242
+    .line 247
     .local v0, "strSelectedLanguage":Ljava/lang/String;
     sget-object v1, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->s_strLanguage:Ljava/lang/String;
 
@@ -947,18 +957,18 @@
 
     if-nez v1, :cond_0
 
-    .line 243
+    .line 248
     sput-object v0, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->s_strLanguage:Ljava/lang/String;
 
-    .line 244
+    .line 249
     const-string v1, "Steam_Language"
 
     invoke-static {v1, v0}, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->setCookie2(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 245
+    .line 250
     invoke-static {}, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->syncAllCookies()V
 
-    .line 247
+    .line 252
     :cond_0
     return-void
 .end method

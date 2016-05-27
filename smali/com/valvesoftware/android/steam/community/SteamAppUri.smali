@@ -320,6 +320,53 @@
     return-object v0
 .end method
 
+.method public static appendLanguageToUrl(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+    .param p0, "url"    # Ljava/lang/String;
+
+    .prologue
+    .line 183
+    invoke-static {}, Lcom/valvesoftware/android/steam/community/LoggedInUserAccountInfo;->getLanguage()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/valvesoftware/android/steam/community/SteamAppUri;->getURLISOCodeForLanguage(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 184
+    .local v0, "urlISOLanguage":Ljava/lang/String;
+    if-eqz v0, :cond_0
+
+    .line 187
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const/16 v2, 0x2f
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    .line 191
+    .end local p0    # "url":Ljava/lang/String;
+    :cond_0
+    return-object p0
+.end method
+
 .method public static catalog()Landroid/net/Uri;
     .locals 1
 
@@ -686,6 +733,411 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static getURLISOCodeForLanguage(Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
+    .param p0, "language"    # Ljava/lang/String;
+
+    .prologue
+    .line 150
+    const-string v0, "english"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "en"
+
+    .line 178
+    :goto_0
+    return-object v0
+
+    .line 151
+    :cond_0
+    const-string v0, "german"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "de"
+
+    goto :goto_0
+
+    .line 152
+    :cond_1
+    const-string v0, "french"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    const-string v0, "fr"
+
+    goto :goto_0
+
+    .line 153
+    :cond_2
+    const-string v0, "italian"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    const-string v0, "it"
+
+    goto :goto_0
+
+    .line 154
+    :cond_3
+    const-string v0, "korean"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    const-string v0, "ko"
+
+    goto :goto_0
+
+    .line 155
+    :cond_4
+    const-string v0, "spanish"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    const-string v0, "es"
+
+    goto :goto_0
+
+    .line 156
+    :cond_5
+    const-string v0, "schinese"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    const-string v0, "zh"
+
+    goto :goto_0
+
+    .line 157
+    :cond_6
+    const-string v0, "schinese"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_7
+
+    const-string v0, "zh-cn"
+
+    goto :goto_0
+
+    .line 158
+    :cond_7
+    const-string v0, "tchinese"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8
+
+    const-string v0, "zh-tw"
+
+    goto :goto_0
+
+    .line 159
+    :cond_8
+    const-string v0, "russian"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    const-string v0, "ru"
+
+    goto :goto_0
+
+    .line 160
+    :cond_9
+    const-string v0, "thai"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    const-string v0, "th"
+
+    goto :goto_0
+
+    .line 161
+    :cond_a
+    const-string v0, "japanese"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_b
+
+    const-string v0, "ja"
+
+    goto :goto_0
+
+    .line 162
+    :cond_b
+    const-string v0, "brazilian"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    const-string v0, "pt-br"
+
+    goto/16 :goto_0
+
+    .line 163
+    :cond_c
+    const-string v0, "portuguese"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    const-string v0, "pt"
+
+    goto/16 :goto_0
+
+    .line 164
+    :cond_d
+    const-string v0, "polish"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_e
+
+    const-string v0, "pl"
+
+    goto/16 :goto_0
+
+    .line 165
+    :cond_e
+    const-string v0, "danish"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_f
+
+    const-string v0, "da"
+
+    goto/16 :goto_0
+
+    .line 166
+    :cond_f
+    const-string v0, "dutch"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    const-string v0, "nl"
+
+    goto/16 :goto_0
+
+    .line 167
+    :cond_10
+    const-string v0, "finnish"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_11
+
+    const-string v0, "fi"
+
+    goto/16 :goto_0
+
+    .line 168
+    :cond_11
+    const-string v0, "norwegian"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_12
+
+    const-string v0, "no"
+
+    goto/16 :goto_0
+
+    .line 169
+    :cond_12
+    const-string v0, "swedish"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    const-string v0, "sv"
+
+    goto/16 :goto_0
+
+    .line 170
+    :cond_13
+    const-string v0, "hungarian"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_14
+
+    const-string v0, "hu"
+
+    goto/16 :goto_0
+
+    .line 171
+    :cond_14
+    const-string v0, "czech"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_15
+
+    const-string v0, "cs"
+
+    goto/16 :goto_0
+
+    .line 172
+    :cond_15
+    const-string v0, "romanian"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_16
+
+    const-string v0, "ro"
+
+    goto/16 :goto_0
+
+    .line 173
+    :cond_16
+    const-string v0, "turkish"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_17
+
+    const-string v0, "tr"
+
+    goto/16 :goto_0
+
+    .line 174
+    :cond_17
+    const-string v0, "arabic"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_18
+
+    const-string v0, "ar"
+
+    goto/16 :goto_0
+
+    .line 175
+    :cond_18
+    const-string v0, "bulgarian"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_19
+
+    const-string v0, "bg"
+
+    goto/16 :goto_0
+
+    .line 176
+    :cond_19
+    const-string v0, "greek"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1a
+
+    const-string v0, "el"
+
+    goto/16 :goto_0
+
+    .line 177
+    :cond_1a
+    const-string v0, "ukrainian"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1b
+
+    const-string v0, "uk"
+
+    goto/16 :goto_0
+
+    .line 178
+    :cond_1b
+    const/4 v0, 0x0
+
+    goto/16 :goto_0
 .end method
 
 .method public static groupWebPage(Ljava/lang/String;)Landroid/net/Uri;

@@ -609,7 +609,7 @@
 
     const/4 v2, 0x0
 
-    .line 2469
+    .line 2470
     const/16 v0, 0x1b
 
     new-array v0, v0, [I
@@ -618,7 +618,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->ActionBar:[I
 
-    .line 2842
+    .line 2843
     new-array v0, v3, [I
 
     const v1, 0x10100b3
@@ -627,7 +627,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->ActionBarLayout:[I
 
-    .line 2861
+    .line 2862
     new-array v0, v3, [I
 
     const v1, 0x101013f
@@ -636,12 +636,12 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->ActionMenuItemView:[I
 
-    .line 2872
+    .line 2873
     new-array v0, v2, [I
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->ActionMenuView:[I
 
-    .line 2895
+    .line 2896
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -650,14 +650,14 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->ActionMode:[I
 
-    .line 2979
+    .line 2980
     new-array v0, v4, [I
 
     fill-array-data v0, :array_2
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->ActivityChooserView:[I
 
-    .line 3016
+    .line 3017
     new-array v0, v3, [I
 
     const v1, 0x7f01001f
@@ -666,7 +666,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->CompatTextView:[I
 
-    .line 3054
+    .line 3055
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -675,7 +675,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->DrawerArrowToggle:[I
 
-    .line 3209
+    .line 3210
     const/16 v0, 0x9
 
     new-array v0, v0, [I
@@ -684,21 +684,21 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->LinearLayoutCompat:[I
 
-    .line 3319
+    .line 3320
     new-array v0, v6, [I
 
     fill-array-data v0, :array_5
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->LinearLayoutCompat_Layout:[I
 
-    .line 3358
+    .line 3359
     new-array v0, v4, [I
 
     fill-array-data v0, :array_6
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->ListPopupWindow:[I
 
-    .line 3409
+    .line 3410
     const/16 v0, 0xe
 
     new-array v0, v0, [I
@@ -707,7 +707,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->MapAttrs:[I
 
-    .line 3637
+    .line 3638
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -716,7 +716,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->MenuGroup:[I
 
-    .line 3719
+    .line 3720
     const/16 v0, 0x11
 
     new-array v0, v0, [I
@@ -725,7 +725,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->MenuItem:[I
 
-    .line 3886
+    .line 3887
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -734,14 +734,14 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->MenuView:[I
 
-    .line 3958
+    .line 3959
     new-array v0, v4, [I
 
     fill-array-data v0, :array_b
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->PopupWindow:[I
 
-    .line 3991
+    .line 3992
     new-array v0, v3, [I
 
     const v1, 0x7f01003f
@@ -750,7 +750,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->PopupWindowBackgroundState:[I
 
-    .line 4046
+    .line 4047
     const/16 v0, 0xf
 
     new-array v0, v0, [I
@@ -759,7 +759,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->SearchView:[I
 
-    .line 4224
+    .line 4225
     const/16 v0, 0xb
 
     new-array v0, v0, [I
@@ -768,14 +768,14 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->Spinner:[I
 
-    .line 4338
+    .line 4339
     new-array v0, v6, [I
 
     fill-array-data v0, :array_e
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->SteamWebButton:[I
 
-    .line 4425
+    .line 4426
     const/16 v0, 0xa
 
     new-array v0, v0, [I
@@ -784,7 +784,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->SwitchCompat:[I
 
-    .line 4718
+    .line 4719
     const/16 v0, 0x53
 
     new-array v0, v0, [I
@@ -793,7 +793,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->Theme:[I
 
-    .line 5769
+    .line 5770
     const/16 v0, 0x16
 
     new-array v0, v0, [I
@@ -802,7 +802,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->Toolbar:[I
 
-    .line 6075
+    .line 6076
     new-array v0, v3, [I
 
     const v1, 0x7f0100b9
@@ -811,7 +811,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->TwoFactorCodeListFragment:[I
 
-    .line 6102
+    .line 6103
     new-array v0, v3, [I
 
     const v1, 0x7f0100ba
@@ -820,14 +820,14 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->TypefaceTextView:[I
 
-    .line 6133
+    .line 6134
     new-array v0, v5, [I
 
     fill-array-data v0, :array_12
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/R$styleable;->View:[I
 
-    .line 6188
+    .line 6189
     new-array v0, v5, [I
 
     fill-array-data v0, :array_13
@@ -836,7 +836,7 @@
 
     return-void
 
-    .line 2469
+    .line 2470
     :array_0
     .array-data 4
         0x7f010001
@@ -868,7 +868,7 @@
         0x7f010083
     .end array-data
 
-    .line 2895
+    .line 2896
     :array_1
     .array-data 4
         0x7f010001
@@ -879,14 +879,14 @@
         0x7f01001c
     .end array-data
 
-    .line 2979
+    .line 2980
     :array_2
     .array-data 4
         0x7f01001d
         0x7f01001e
     .end array-data
 
-    .line 3054
+    .line 3055
     :array_3
     .array-data 4
         0x7f010020
@@ -899,7 +899,7 @@
         0x7f010027
     .end array-data
 
-    .line 3209
+    .line 3210
     :array_4
     .array-data 4
         0x10100af
@@ -913,7 +913,7 @@
         0x7f01002a
     .end array-data
 
-    .line 3319
+    .line 3320
     :array_5
     .array-data 4
         0x10100b3
@@ -922,14 +922,14 @@
         0x1010181
     .end array-data
 
-    .line 3358
+    .line 3359
     :array_6
     .array-data 4
         0x10102ac
         0x10102ad
     .end array-data
 
-    .line 3409
+    .line 3410
     :array_7
     .array-data 4
         0x7f01002b
@@ -948,7 +948,7 @@
         0x7f010038
     .end array-data
 
-    .line 3637
+    .line 3638
     :array_8
     .array-data 4
         0x101000e
@@ -959,7 +959,7 @@
         0x10101e0
     .end array-data
 
-    .line 3719
+    .line 3720
     :array_9
     .array-data 4
         0x1010002
@@ -981,7 +981,7 @@
         0x7f01003c
     .end array-data
 
-    .line 3886
+    .line 3887
     :array_a
     .array-data 4
         0x10100ae
@@ -994,14 +994,14 @@
         0x7f01003d
     .end array-data
 
-    .line 3958
+    .line 3959
     :array_b
     .array-data 4
         0x1010176
         0x7f01003e
     .end array-data
 
-    .line 4046
+    .line 4047
     :array_c
     .array-data 4
         0x10100da
@@ -1021,7 +1021,7 @@
         0x7f01004a
     .end array-data
 
-    .line 4224
+    .line 4225
     :array_d
     .array-data 4
         0x10100af
@@ -1037,7 +1037,7 @@
         0x7f01004e
     .end array-data
 
-    .line 4338
+    .line 4339
     :array_e
     .array-data 4
         0x7f01004f
@@ -1046,7 +1046,7 @@
         0x7f010052
     .end array-data
 
-    .line 4425
+    .line 4426
     :array_f
     .array-data 4
         0x1010124
@@ -1061,7 +1061,7 @@
         0x7f010059
     .end array-data
 
-    .line 4718
+    .line 4719
     :array_10
     .array-data 4
         0x1010057
@@ -1149,7 +1149,7 @@
         0x7f0100ab
     .end array-data
 
-    .line 5769
+    .line 5770
     :array_11
     .array-data 4
         0x10100af
@@ -1176,7 +1176,7 @@
         0x7f0100b8
     .end array-data
 
-    .line 6133
+    .line 6134
     :array_12
     .array-data 4
         0x10100da
@@ -1184,7 +1184,7 @@
         0x7f0100bc
     .end array-data
 
-    .line 6188
+    .line 6189
     :array_13
     .array-data 4
         0x10100d0

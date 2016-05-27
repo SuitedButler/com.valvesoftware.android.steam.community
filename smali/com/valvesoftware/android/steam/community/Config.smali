@@ -48,7 +48,7 @@
     const/4 v3, 0x0
 
     .line 13
-    const-string v0, "2.1.5"
+    const-string v0, "2.1.6"
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/Config;->APP_VERSION:Ljava/lang/String;
 
@@ -209,7 +209,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/Config;->URL_STORE_BASE_INSECURE:Ljava/lang/String;
 
-    .line 57
+    .line 58
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -239,7 +239,7 @@
 
     sput-object v0, Lcom/valvesoftware/android/steam/community/Config;->URL_HELP_BASE:Ljava/lang/String;
 
-    .line 62
+    .line 63
     sget-object v0, Lcom/valvesoftware/android/steam/community/Config;->STEAM_UNIVERSE_WEBPHP:Lcom/valvesoftware/android/steam/community/Config$SteamUniverse;
 
     sget-object v1, Lcom/valvesoftware/android/steam/community/Config$SteamUniverse;->Dev:Lcom/valvesoftware/android/steam/community/Config$SteamUniverse;
@@ -251,7 +251,7 @@
     :goto_7
     sput-object v0, Lcom/valvesoftware/android/steam/community/Config;->URL_MOBILE_CRASH_UPLOAD:Ljava/lang/String;
 
-    .line 68
+    .line 69
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/String;
@@ -378,7 +378,7 @@
 
     goto/16 :goto_5
 
-    .line 57
+    .line 58
     :cond_c
     sget-object v0, Lcom/valvesoftware/android/steam/community/Config;->STEAM_UNIVERSE_WEBPHP:Lcom/valvesoftware/android/steam/community/Config$SteamUniverse;
 
@@ -395,7 +395,7 @@
 
     goto/16 :goto_6
 
-    .line 62
+    .line 63
     :cond_e
     const-string v0, "http://afarnsworth.valvesoftware.com/crashupload/androidsubmit1"
 
